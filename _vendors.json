@@ -4,6 +4,7 @@
 	],
 	"js": [
 		"node_modules/lazysizes/lazysizes.min.js",
+		"node_modules/animejs/lib/anime.min.js",
 		"node_modules/swiper/js/swiper.js"
 	],
 	"css": [

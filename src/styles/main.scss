@@ -3,6 +3,7 @@
 @import "abstracts/mixins";
 
 @import "base/animations";
+@import "base/keyframes";
 @import "base/reset";
 @import "base/fonts";
 @import "base/global";
@@ -10,14 +11,18 @@
 
 @import "layout/grid";
 @import "layout/header";
-@import "layout/footer";
 @import "layout/navigation";
-@import "layout/sidebar";
+@import "layout/footer";
 @import "layout/forms";
+@import "layout/main-banner";
 
 @import "components/buttons";
+@import "components/hamburger";
 @import "components/tab";
+@import "components/title";
+@import "components/block-items";
 @import "components/loading";
+@import "components/fullpage";
 @import "components/fullpage";
 
 @import "pages/index";

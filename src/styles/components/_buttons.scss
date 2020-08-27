@@ -1,7 +1,65 @@
 .btn {
+	cursor: pointer;
+	user-select: none;
 	display: inline-flex;
+	width: fit-content;
 	justify-content: center;
 	align-items: center;
 	border: 0;
+	padding: 0;
 	appearance: none;
+}
+
+.btn-view-more {
+	color: map-get($color, x-white);
+	font-size: 1.2rem;
+	position: relative;
+	background: map-get($color, main-1);
+	padding-right: 32px;
+	padding-left: 14px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	&:after {
+		content: "";
+		position: absolute;
+		background-image: url(../assets/icons/arrow-btn-view-more.svg);
+		width: 14px;
+		height: 11px;
+		right: 8px;
+		top: 50%;
+		transform: translateY(-50%);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+}
+
+.btn-prev-text,
+.btn-next-text {
+	color: map-get($color, x-white);
+	font-size: 1.2rem;
+	position: relative;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 55%;
+		transform: translateY(-50%);
+		background-size: 100% 100%;
+		width: 14px;
+		height: 11px;
+	}
+}
+
+.btn-prev-text {
+	padding-left: 25px;
+	&:after {
+		left: 0;
+		background-image: url(../assets/icons/left-arrow.svg);
+	}
+}
+.btn-next-text {
+	padding-right: 25px;
+	&:after {
+		right: 0;
+		background-image: url(../assets/icons/right-arrow.svg);
+	}
 }

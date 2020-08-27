@@ -1,0 +1,16 @@
+.App-Animation {
+	transition: transform 1.85s cubic-bezier(0.2, 1, 0.2, 1);
+	transform-style: preserve-3d;
+	&.animated {
+		transition: transform 2s cubic-bezier(0.2, 1, 0.2, 1);
+		transform: translate(-20%);
+	}
+}
+
+.NavBar-Animation {
+	transition: transform 1.85s cubic-bezier(0.2, 1, 0.2, 1);
+	transform-style: preserve-3d;
+	&.animated {
+		transform: translate(0);
+	}
+}

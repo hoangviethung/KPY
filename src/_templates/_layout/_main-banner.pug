@@ -1,0 +1,29 @@
+.main-slider-banner
+	.swiper-container.h-100vh
+		.swiper-wrapper
+			-for(i=1;i<4;i++)
+				.swiper-slide.item-banner
+					.banner__img.ov-h.h-100
+						img.object-cover.fullsize(src=`./assets/images/banners/main-slider-banner-${i}.png`, alt="BANNER")
+					.banner__text
+						.container.overflow-hidden.h-100
+							.background-multiply
+							.text
+								.text__wrapper
+									.title.cl-white The Customer’s
+									.title.cl-white.font-family-SVNBOLD first choice
+									.desc Welcome to KPY Building Trading Ltd.,
+									.btn.btn-view-more Khám phá
+		.pagination-wrapper
+			.container.h-100
+				.swiper-pagination
+	.socials__wrapper
+		.container
+			.row.no-gutters.justify-end
+				.list-social
+					a(href="#").item-social
+						img.svg(src="./assets/icons/facebook.svg", alt="FACEBOOK")
+					a(href="#").item-social
+						img.svg(src="./assets/icons/instagram.svg", alt="INSTAGRAM")
+					a(href="#").item-social
+						img.svg(src="./assets/icons/youtube.svg", alt="YOUTUBE")

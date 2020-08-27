@@ -1,0 +1,51 @@
+.NavBar {
+	top: 0;
+	bottom: 0;
+	right: 0;
+	position: fixed;
+	max-width: 676px;
+	width: 100%;
+	background: #212121;
+	z-index: -1;
+	transform: translateX(100%);
+	box-shadow: 0 3px 6px rgba($color: #000000, $alpha: 0.16);
+}
+
+.nav-wrapper {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+}
+
+.nav-item + .nav-item {
+	margin-top: 30px;
+}
+
+.nav-link {
+	font-size: 2.5rem;
+	color: map-get($color, x-white);
+	position: relative;
+	padding-left: 122px;
+	&:after {
+		content: "";
+		top: 50%;
+		height: 1px;
+		width: 86px;
+		position: absolute;
+		left: 0;
+		background: rgba($color: #707070, $alpha: 0.5);
+		border-radius: 25px;
+		transition: 0.3s all ease-in-out;
+	}
+	@media (min-width: 1025px) {
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			padding-left: 170px;
+			font-family: SVN--Bold;
+			&:after {
+				width: 130px;
+			}
+		}
+	}
+}

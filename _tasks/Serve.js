@@ -102,6 +102,7 @@ export default (_) => {
 				"src/scripts/main.ts",
 				"src/scripts/libraries/**.ts",
 				"src/scripts/utilities/**.ts",
+				"src/scripts/animations/**.ts",
 			],
 			_.gulp.series(watchTypescript),
 		);
