@@ -35,6 +35,23 @@
 	}
 }
 
+.container-custom {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	&.size-1365px {
+		@media (min-width: 1440px) {
+			max-width: 1365px;
+		}
+	}
+	&.size-1088px {
+		@media (min-width: 1200px) {
+			max-width: 1088px;
+		}
+	}
+}
+
 .col {
 	-ms-flex-preferred-size: 0;
 	flex-basis: 0;

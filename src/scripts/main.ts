@@ -84,27 +84,77 @@ const initSliderServiceIndexPage = () => {
 		".slider-index-service .swiper-container",
 		{
 			centeredSlides: true,
-			slidesPerView: 3,
+			slidesPerView: "auto",
 			simulateTouch: false,
 			loop: true,
 			speed: 1500,
-			autoplay: {
-				delay: 2000,
-			},
-			breakpoints: {
-				1025: {
-					spaceBetween: 0,
-				},
-				1600: {
-					spaceBetween: -85,
-				},
-			},
+			// autoplay: {
+			// 	delay: 2000,
+			// },
+			spaceBetween: 36,
 			navigation: {
 				prevEl: ".index-service-prev-slider",
 				nextEl: ".index-service-next-slider",
 			},
 		},
 	);
+};
+
+// INIT INDEX GARELLY SLIDER
+const initSliderGarellyIndexPage = () => {
+	let ServicetIndexPage = new Swiper(
+		".slider-index-gallery .swiper-container",
+		{
+			slidesPerView: 3,
+			simulateTouch: false,
+			loop: true,
+			speed: 2000,
+			autoplay: {
+				delay: 1000,
+			},
+			spaceBetween: 28,
+			navigation: {
+				prevEl: ".index-gallery-prev-slider",
+				nextEl: ".index-gallery-next-slider",
+			},
+		},
+	);
+};
+
+const initSliderNewsIndexPage = () => {
+	let NewsIndexPage = new Swiper(".slider-index-news .swiper-container", {
+		slidesPerView: 3,
+		centeredSlides: true,
+		simulateTouch: false,
+		loop: true,
+		speed: 2000,
+		// autoplay: {
+		// 	delay: 1000,
+		// },
+		spaceBetween: -15,
+		navigation: {
+			prevEl: ".index-news-prev-slider",
+			nextEl: ".index-news-next-slider",
+		},
+	});
+};
+
+const initSliderClientsIndexPage = () => {
+	let NewsIndexPage = new Swiper(".slider-index-clients .swiper-container", {
+		slidesPerView: 3,
+		centeredSlides: true,
+		simulateTouch: false,
+		loop: true,
+		speed: 2000,
+		autoplay: {
+			delay: 1000,
+		},
+		spaceBetween: 40,
+		navigation: {
+			prevEl: ".index-clients-prev-slider",
+			nextEl: ".index-clients-next-slider",
+		},
+	});
 };
 
 // SET HEIGHT TEXT WRAPPER
@@ -136,4 +186,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 	intitSliderAboutIndexPage();
 	// INIT INDEX SERVICE SLIDER
 	initSliderServiceIndexPage();
+	// INIT INDEX GARELLY SLIDER
+	initSliderGarellyIndexPage();
+	// INIT INDEX NEWS SLIDER
+	initSliderNewsIndexPage();
+	initSliderClientsIndexPage();
 });

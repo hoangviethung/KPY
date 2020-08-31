@@ -1,0 +1,43 @@
+.form-container {
+	position: relative;
+}
+
+.form-row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -10px;
+	margin-left: -10px;
+}
+
+.form-group {
+	position: relative;
+}
+
+.form-control {
+	width: 100%;
+	background: none;
+	border: 1px solid rgba($color: #ffffff, $alpha: 1);
+	padding: 10px 15px 15px 15px;
+	color: map-get($color, x-white);
+	transition: 0.3s border ease-in-out;
+	overflow: hidden;
+	&::placeholder {
+		color: rgba($color: #b5b5b5, $alpha: 0.94);
+		transition: 0.3s transform ease-in-out, 0.2s font-size linear,
+			0.35s color linear;
+	}
+	&:focus {
+		border: 1px solid rgba($color: map-get($color, main-1), $alpha: 1);
+		&::placeholder {
+			color: map-get($color, main-1);
+			top: 0;
+			transform: translateX(2rem);
+			font-size: 1.2rem;
+			z-index: 100;
+		}
+	}
+}
+
+textarea.form-control {
+	resize: none;
+}

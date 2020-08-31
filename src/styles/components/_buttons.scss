@@ -50,14 +50,14 @@
 }
 
 .btn-prev-text {
-	padding-left: 25px;
+	padding-left: 20px;
 	&:after {
 		left: 0;
 		background-image: url(../assets/icons/left-arrow.svg);
 	}
 }
 .btn-next-text {
-	padding-right: 25px;
+	padding-right: 20px;
 	&:after {
 		right: 0;
 		background-image: url(../assets/icons/right-arrow.svg);

@@ -1,0 +1,24 @@
+footer {
+	padding: 35px 0 55px;
+	.logo-foter {
+		display: inline-block;
+	}
+	.list-social {
+		position: relative;
+		display: inline-flex;
+		padding-left: 60px;
+		margin-left: 60px;
+		.item-social + .item-social {
+			margin-left: 22px;
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 1px;
+			background: rgba($color: #ffffff, $alpha: 0.2);
+		}
+	}
+}
