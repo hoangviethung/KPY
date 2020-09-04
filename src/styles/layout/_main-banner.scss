@@ -1,5 +1,10 @@
 .main-slider-banner {
 	position: relative;
+	.swiper-container {
+		@media (max-width: 1024.98px) {
+			height: 50vh;
+		}
+	}
 	.banner__img {
 		position: relative;
 		&:after {
@@ -32,6 +37,12 @@
 		transform: translate(calc(-100% - 10px), -50%);
 		max-width: 50%;
 		transition: transform 1s;
+		@media (max-width: 1439.98px) {
+			max-width: 65%;
+		}
+		@media (max-width: 1024.98px) {
+			max-width: 60%;
+		}
 	}
 	.background-multiply {
 		background: rgba($color: #272727, $alpha: 0.49);
@@ -49,6 +60,16 @@
 		justify-content: center;
 		margin: 0 auto;
 		padding: 50px 0;
+		@media (max-width: 1024.98px) {
+			min-height: 300px;
+			padding: 25px 0;
+		}
+		@media (max-width: 767.98px) {
+			min-height: 250px;
+		}
+		@media (max-width: 575.98px) {
+			min-height: 50%;
+		}
 	}
 	.title {
 		overflow: hidden;
@@ -60,6 +81,24 @@
 		}
 		&.font-family-SVNBOLD {
 			font-size: 10.5rem;
+			@media (max-width: 1024.98px) {
+				font-size: 7rem;
+			}
+			@media (max-width: 767.98px) {
+				font-size: 5rem;
+			}
+			@media (max-width: 575.98px) {
+				font-size: 3rem;
+			}
+		}
+		@media (max-width: 1024.98px) {
+			font-size: 5rem;
+		}
+		@media (max-width: 767.98px) {
+			font-size: 4rem;
+		}
+		@media (max-width: 575.98px) {
+			font-size: 2rem;
 		}
 	}
 	.desc {
@@ -107,6 +146,9 @@
 		list-style: none;
 		text-align: center;
 		line-height: 1;
+		@media (max-width: 575.98px) {
+			display: none;
+		}
 	}
 	.swiper-pagination-bullet {
 		position: relative;
@@ -136,16 +178,12 @@
 				&:after,
 				&:before {
 					top: 4.5rem;
+					@media (max-width: 1024.98px) {
+						top: 2.5rem;
+					}
 				}
 			}
 		}
-		// &:last-child {
-		// 	overflow-y: hidden;
-		// 	&:after,
-		// 	&:before {
-		// 		transition-delay: 0.5s;
-		// 	}
-		// }
 		&:last-child {
 			&.swiper-pagination-bullet-active {
 				margin-top: 19.5rem;
@@ -162,10 +200,16 @@
 			&:after {
 				height: 15rem;
 				opacity: 0.2;
+				@media (max-width: 1024.98px) {
+					height: 10rem;
+				}
 			}
 			&:before {
 				animation: progressTimeLine 5s linear;
 				opacity: 1;
+			}
+			@media (max-width: 1024.98px) {
+				margin-bottom: 11rem;
 			}
 		}
 	}
@@ -174,6 +218,12 @@
 		bottom: 80px;
 		width: 100%;
 		z-index: 10;
+		@media (max-width: 1024.98px) {
+			bottom: 25px;
+		}
+		@media (max-width: 575.98px) {
+			bottom: 10px;
+		}
 	}
 	.list-social {
 		position: relative;
@@ -192,9 +242,21 @@
 		}
 		.item-social {
 			margin-left: auto;
+
+			@media (max-width: 575.98px) {
+				img,
+				svg {
+					display: block;
+					width: 60%;
+					margin: 0 auto;
+				}
+			}
 		}
 		.item-social + .item-social {
 			margin-left: 22px;
+			@media (max-width: 575.98px) {
+				margin-left: 5px;
+			}
 		}
 	}
 }

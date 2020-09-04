@@ -65,8 +65,6 @@ const initMainSliderBanner = () => {
 // INIT INDEX ABOUT SLIDER
 const intitSliderAboutIndexPage = () => {
 	let AboutIndexPage = new Swiper(".slider-index-about .swiper-container", {
-		slidesPerView: 1,
-		spaceBetween: 50,
 		centeredSlides: true,
 		centeredSlidesBounds: true,
 		loop: true,
@@ -74,6 +72,18 @@ const intitSliderAboutIndexPage = () => {
 		simulateTouch: false,
 		autoplay: {
 			delay: 2000,
+		},
+		slidesPerView: 1.3,
+		spaceBetween: 10,
+		breakpoints: {
+			1025: {
+				slidesPerView: 1,
+				spaceBetween: 50,
+			},
+			768: {
+				spaceBetween: 25,
+				slidesPerView: 1.8,
+			},
 		},
 	});
 };
@@ -84,17 +94,32 @@ const initSliderServiceIndexPage = () => {
 		".slider-index-service .swiper-container",
 		{
 			centeredSlides: true,
-			slidesPerView: "auto",
+			slidesPerView: 1,
 			simulateTouch: false,
 			loop: true,
 			speed: 1500,
-			// autoplay: {
-			// 	delay: 2000,
-			// },
-			spaceBetween: 36,
+			autoplay: {
+				delay: 2000,
+			},
+			loopedSlides: 3,
 			navigation: {
 				prevEl: ".index-service-prev-slider",
 				nextEl: ".index-service-next-slider",
+			},
+			breakpoints: {
+				320: {
+					slidesPerView: 1.4,
+					spaceBetween: 10,
+				},
+				768: {
+					spaceBetween: 0,
+				},
+				1025.98: {
+					spaceBetween: -100,
+				},
+				1440: {
+					spaceBetween: -135,
+				},
 			},
 		},
 	);
@@ -105,7 +130,6 @@ const initSliderGarellyIndexPage = () => {
 	let ServicetIndexPage = new Swiper(
 		".slider-index-gallery .swiper-container",
 		{
-			slidesPerView: 3,
 			simulateTouch: false,
 			loop: true,
 			speed: 2000,
@@ -117,13 +141,21 @@ const initSliderGarellyIndexPage = () => {
 				prevEl: ".index-gallery-prev-slider",
 				nextEl: ".index-gallery-next-slider",
 			},
+			breakpoints: {
+				600: {
+					slidesPerView: 2,
+				},
+				1025: {
+					slidesPerView: 3,
+				},
+			},
 		},
 	);
 };
 
+// INIT INDEX NEWS SLIDER
 const initSliderNewsIndexPage = () => {
 	let NewsIndexPage = new Swiper(".slider-index-news .swiper-container", {
-		slidesPerView: 3,
 		centeredSlides: true,
 		simulateTouch: false,
 		loop: true,
@@ -131,30 +163,110 @@ const initSliderNewsIndexPage = () => {
 		// autoplay: {
 		// 	delay: 1000,
 		// },
-		spaceBetween: -15,
+		spaceBetween: 0,
 		navigation: {
 			prevEl: ".index-news-prev-slider",
 			nextEl: ".index-news-next-slider",
 		},
+		breakpoints: {
+			1025: {
+				slidesPerView: 3,
+				spaceBetween: -15,
+			},
+			600: {
+				slidesPerView: 2,
+				spaceBetween: -15,
+			},
+		},
 	});
 };
 
+// INIT INDEX CLIENTS SLIDER
 const initSliderClientsIndexPage = () => {
 	let NewsIndexPage = new Swiper(".slider-index-clients .swiper-container", {
-		slidesPerView: 3,
-		centeredSlides: true,
 		simulateTouch: false,
 		loop: true,
 		speed: 2000,
 		autoplay: {
 			delay: 1000,
 		},
-		spaceBetween: 40,
+		spaceBetween: 10,
 		navigation: {
 			prevEl: ".index-clients-prev-slider",
 			nextEl: ".index-clients-next-slider",
 		},
+		breakpoints: {
+			1025: {
+				spaceBetween: 20,
+			},
+			1440: {
+				spaceBetween: 40,
+				slidesPerView: 3,
+				centeredSlides: true,
+			},
+			768: {
+				slidesPerView: 2,
+			},
+		},
 	});
+};
+
+// INIT PROJECTS NEWS SLIDER
+const initSliderProjectsIndexPage = () => {
+	let ProjectsIndexPageThumb = new Swiper(
+		".slider-index-projects-thumb .swiper-container",
+		{
+			slidesPerView: 3,
+			simulateTouch: false,
+			loop: true,
+			grabCursor: true,
+			freeMode: true,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+			speed: 1500,
+			spaceBetween: 20,
+		},
+	);
+	let ProjectsIndexPage = new Swiper(
+		".slider-index-projects-review .swiper-container",
+		{
+			slidesPerView: 1,
+			simulateTouch: false,
+			loop: true,
+			speed: 2000,
+			// autoplay: {
+			// 	delay: 1000,
+			// },
+			spaceBetween: 0,
+			navigation: {
+				prevEl: ".index-projects-prev-slider",
+				nextEl: ".index-projects-next-slider",
+			},
+			thumbs: {
+				swiper: ProjectsIndexPageThumb,
+			},
+			breakpoints: {
+				1600: {
+					slidesPerView: 1.8,
+				},
+				1025: {
+					slidesPerView: 1.3,
+					spaceBetween: -75,
+				},
+			},
+			on: {
+				init: function () {
+					const width = document.querySelector(
+						".slider-index-projects-review .swiper-slide-active",
+					).clientWidth;
+					const wrapper = document.querySelector(
+						".slider-index-projects-thumb-wrapper",
+					);
+					wrapper.setAttribute("style", `max-width:${width}px`);
+				},
+			},
+		},
+	);
 };
 
 // SET HEIGHT TEXT WRAPPER
@@ -190,5 +302,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initSliderGarellyIndexPage();
 	// INIT INDEX NEWS SLIDER
 	initSliderNewsIndexPage();
+	// INIT INDEX CLIENTS SLIDER
 	initSliderClientsIndexPage();
+	// INIT PROJECTS NEWS SLIDER
+	initSliderProjectsIndexPage();
 });
