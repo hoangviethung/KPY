@@ -5,9 +5,11 @@
 	"js": [
 		"node_modules/lazysizes/lazysizes.min.js",
 		"node_modules/animejs/lib/anime.min.js",
-		"node_modules/swiper/js/swiper.js"
+		"node_modules/swiper/js/swiper.js",
+		"node_modules/wowjs/dist/wow.js"
 	],
 	"css": [
-		"node_modules/swiper/css/swiper.css"
+		"node_modules/swiper/css/swiper.css",
+		"node_modules/wowjs/css/libs/animate.css"
 	]
 }

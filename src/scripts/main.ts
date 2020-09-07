@@ -2,16 +2,22 @@ import { getSVGs, Loading } from "./utilities/util";
 import Axios from "axios";
 import * as animation from "./animations/animation";
 declare var Swiper: any;
+declare var WOW: any;
 
 // TOGGLE NAVBAR
 const toggleNavBar = () => {
 	const btn = document.querySelector(".navBarHamburger__mainWrapper");
 	const body = document.querySelector(".App-Animation");
 	const navBar = document.querySelector(".NavBar");
+	const navBar__items = navBar.querySelectorAll(".nav-item");
 	btn.addEventListener("click", (e) => {
 		btn.classList.toggle("active");
 		body.classList.toggle("animated");
 		navBar.classList.toggle("animated");
+	});
+	// INIT TIMEDELAY
+	navBar__items.forEach((item: any, index: any) => {
+		item.setAttribute("style", `--delay-out: ${(index + 5) * 0.1}s`);
 	});
 };
 
@@ -283,11 +289,27 @@ const setHeightTextWrapper = () => {
 	});
 };
 
+// INIT WOW JS
+const initWowJs = () => {
+	new WOW({
+		boxClass: "wow",
+		animateClass: "animated",
+		offset: 100,
+		mobile: true,
+		live: true,
+		callback: function (box: any) {},
+		scrollContainer: null,
+		resetAnimation: true,
+	}).init();
+};
+
 document.addEventListener("DOMContentLoaded", async () => {
 	// GET SVG
 	getSVGs(".svg");
 	// LOADING
 	Loading();
+	// INIT WOW JS
+	initWowJs();
 	// TOGGLE NAVBAR
 	toggleNavBar();
 	// INIT MAIN SLIDER

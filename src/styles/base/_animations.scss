@@ -12,5 +12,8 @@
 	transform-style: preserve-3d;
 	&.animated {
 		transform: translate(0);
+		.nav-item {
+			opacity: 1;
+		}
 	}
 }
